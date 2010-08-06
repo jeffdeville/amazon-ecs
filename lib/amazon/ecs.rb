@@ -27,7 +27,6 @@ require 'cgi'
 require 'hmac-sha2'
 require 'base64'
 require 'openssl'
-require 'crack/xml'
 
 module Amazon
   class RequestError < StandardError; end
@@ -124,7 +123,6 @@ module Amazon
       # XML input is in string format
       def initialize(xml)
         @doc = Hpricot(xml)
-				@hash = Crack::XML.parse(@doc.to_s)
       end
 
       # Return Hpricot object.
