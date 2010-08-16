@@ -191,8 +191,8 @@ module Amazon
     protected
       def self.log(s)
         return unless self.debug
-        if defined? RAILS_DEFAULT_LOGGER
-          RAILS_DEFAULT_LOGGER.error(s)
+				if defined? Rails.logger && !Rails.logger.nil?
+					Rails.logger.error(s)
         elsif defined? LOGGER
           LOGGER.error(s)
         else
