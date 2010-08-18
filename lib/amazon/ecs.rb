@@ -46,7 +46,7 @@ module Amazon
     OPENSSL_DIGEST = OpenSSL::Digest::Digest.new( 'sha256' ) if OPENSSL_DIGEST_SUPPORT
 
     @@options = {
-      :version => "2005-10-05",
+      :version => "2010-08-06",
       :service => "AWSECommerceService"
     }
 
